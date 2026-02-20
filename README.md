@@ -16,17 +16,20 @@ Clinched is a high-security desktop password manager built on a Zero-Knowledge A
 📖 Responsible Use Manual (Security Protocols)
 
 1. Master Password Hygiene
-Entropy: A passphrase of at least 16 characters is highly recommended.
 
-Irrecoverability: By design (Zero-Knowledge), the master password is never stored. If forgotten, your data is mathematically inaccessible. There is no "backdoor" or "reset" function.
+  Entropy: A passphrase of at least 16 characters is highly recommended.
+
+  Irrecoverability: By design (Zero-Knowledge), the master password is never stored. If forgotten, your data is mathematically inaccessible. There is no "backdoor" or "reset" function.
 
 2. Clipboard Security
-When viewing a password, it can be copied to the clipboard.
 
-Software Safeguard: Clinched implements an automated cleanup protocol that wipes the system clipboard upon closing the application to mitigate risks from "Clipboard Sniffing" malware.
+  When viewing a password, it can be copied to the clipboard.
+
+  Software Safeguard: Clinched implements an automated cleanup protocol that wipes the system clipboard upon closing the application to mitigate risks from "Clipboard Sniffing" malware.
 
 3. Professional Deployment
-Run create_shortcut.py for a clean deployment on your workstation. This script links the binary with the Clinched.ico asset and sets the correct working directory for persistent database access.
+
+  Run create_shortcut.py for a clean deployment on your workstation. This script links the binary with the Clinched.ico asset and sets the correct working directory for persistent database access.
 
 ⚠️ Limited Liability & Safety Warnings
 
@@ -47,4 +50,5 @@ Run create_shortcut.py for a clean deployment on your workstation. This script l
 - create_shortcut.py: Deployment automation script using WSH Shell for Windows integration.
 
 Developed by Fabian
+
 February, 2026
