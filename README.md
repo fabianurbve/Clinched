@@ -1,4 +1,6 @@
 🛡️ Clinched v1.0 - Secure Password Vault
+=========================================
+
 Clinched is a high-security desktop password manager built on a Zero-Knowledge Architecture. Beyond simple credential storage, this project implements industry-standard cryptographic protocols and optimized resource management for production-grade software deployment.
 
 🛠️ Technical & Cryptographic Specifications
