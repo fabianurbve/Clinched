@@ -31,11 +31,12 @@ Software Safeguard: Clinched implements an automated cleanup protocol that wipes
 Run create_shortcut.py for a clean deployment on your workstation. This script links the binary with the Clinched.ico asset and sets the correct working directory for persistent database access.
 
 ⚠️ Limited Liability & Safety Warnings
-Compromised Environments: Clinched does not protect against active Keyloggers or Screen-scrapers on a compromised OS. Always run this software on a clean, trusted system.
 
-External Manipulation: Manually modifying entries within vault.db using external SQLite editors may corrupt the encryption schema, leading to permanent data loss for those entries.
+1. Compromised Environments: Clinched does not protect against active Keyloggers or Screen-scrapers on a compromised OS. Always run this software on a clean, trusted system.
 
-External Backups: While the program creates a local shadow copy (vault_backup.db), it is the user's responsibility to periodically back up the vault.db file to a separate physical medium or encrypted cloud storage.
+2. External Manipulation: Manually modifying entries within vault.db using external SQLite editors may corrupt the encryption schema, leading to permanent data loss for those entries.
+
+3. External Backups: While the program creates a local shadow copy (vault_backup.db), it is the user's responsibility to periodically back up the vault.db file to a separate physical medium or encrypted cloud storage.
 
 📂 Project Module Structure
 main.py: The orchestrator. Manages the Tkinter UI state, session lifecycle, and clipboard security.
