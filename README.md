@@ -4,18 +4,16 @@
 Clinched is a high-security desktop password manager built on a Zero-Knowledge Architecture. Beyond simple credential storage, this project implements industry-standard cryptographic protocols and optimized resource management for production-grade software deployment.
 
 🛠️ Technical & Cryptographic Specifications
-For any recruiter or security engineer, these are the core pillars ensuring the integrity and confidentiality of the data:
 
-Key Derivation Function (KDF): Implements PBKDF2-HMAC-SHA256 with 480,000 iterations. This configuration exceeds OWASP’s standard recommendations, providing superior resistance against dictionary attacks and GPU-accelerated brute-force attempts.
+- Key Derivation Function (KDF): Implements PBKDF2-HMAC-SHA256 with 480,000 iterations. This configuration exceeds OWASP’s standard recommendations, providing superior resistance against dictionary attacks and GPU-accelerated brute-force attempts.
 
-Symmetric Encryption: Utilizes the Fernet specification, ensuring that encrypted data cannot be read or manipulated without the correct key. It employs AES-128 in CBC mode with an HMAC for message authentication.
+- Symmetric Encryption: Utilizes the Fernet specification, ensuring that encrypted data cannot be read or manipulated without the correct key. It employs AES-128 in CBC mode with an HMAC for message authentication.
 
-Dynamic Path Management: The software is context-aware; it detects its execution state through sys.frozen inspection. When running as a binary (.exe), it dynamically re-points the BASE_DIR to sys.executable. This prevents data loss by ensuring the database remains in the user's directory rather than in volatile Windows temporary folders (_MEIPASS).
+- Dynamic Path Management: The software is context-aware; it detects its execution state through sys.frozen inspection. When running as a binary (.exe), it dynamically re-points the BASE_DIR to sys.executable. This prevents data loss by ensuring the database remains in the user's directory rather than in volatile Windows temporary folders (_MEIPASS).
 
-Data Integrity Protocol: Features a Shadow Copying system that generates a vault_backup.db upon every successful session termination. The system performs a physical validation of the database file before initialization, triggering automatic recovery protocols if the primary file is missing or corrupted.
+- Data Integrity Protocol: Features a Shadow Copying system that generates a vault_backup.db upon every successful session termination. The system performs a physical validation of the database file before initialization, triggering automatic recovery protocols if the primary file is missing or corrupted.
 
 📖 Responsible Use Manual (Security Protocols)
-Operating advanced cryptography requires the user to adopt consistent security habits:
 
 1. Master Password Hygiene
 Entropy: A passphrase of at least 16 characters is highly recommended.
@@ -39,13 +37,14 @@ Run create_shortcut.py for a clean deployment on your workstation. This script l
 3. External Backups: While the program creates a local shadow copy (vault_backup.db), it is the user's responsibility to periodically back up the vault.db file to a separate physical medium or encrypted cloud storage.
 
 📂 Project Module Structure
-main.py: The orchestrator. Manages the Tkinter UI state, session lifecycle, and clipboard security.
 
-crypto_utils.py: The cryptographic abstraction layer (PBKDF2, AES, Fernet).
+- main.py: The orchestrator. Manages the Tkinter UI state, session lifecycle, and clipboard security.
 
-database_manager.py: The persistence layer. Manages SQLite transactions, path resolution, and disaster recovery.
+- crypto_utils.py: The cryptographic abstraction layer (PBKDF2, AES, Fernet).
 
-create_shortcut.py: Deployment automation script using WSH Shell for Windows integration.
+- database_manager.py: The persistence layer. Manages SQLite transactions, path resolution, and disaster recovery.
+
+- create_shortcut.py: Deployment automation script using WSH Shell for Windows integration.
 
 Developed by Fabian
 February, 2026
